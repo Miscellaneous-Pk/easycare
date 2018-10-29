@@ -7,15 +7,28 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style media="screen">
-    .fill {
-      overflow: hidden
+    <style type="text/css">
+
+    .carousal-item img {
+      object-fit: cover;
+      min-height: 100%;
     }
-    .fill img {
-      flex-shrink: 0;
-      min-width: 100%;
-      min-height: 100%
+
+    @media only screen and (max-width: 600px) {
+      body {
+          background-color: lightblue;
+      }
+      
+      .carousal-item {
+        height: 40rem;
+      }
+
+      .carousal-item img {
+        object-fit: cover;
+        min-height: 100%;
+      }
     }
+
     </style>
     <title>Welcome Easy Cure!</title>
   </head>
@@ -48,32 +61,18 @@
       </nav>
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" style="height: 20rem" >
-      <div class="carousel-item active">
-        <div class="d-block w-100">
-          <div class="fill d-flex justify-content-center align-items-center">
-              <img src="https://images.unsplash.com/photo-1540574435530-6f8df0eaf3a3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f61202b562b90decd2319ab648db246&auto=format&fit=crop&w=634&q=80" alt="First slide">
-          </div>
-        </div>
+    <div class="carousel-inner border-danger border">
+
+      <div class="carousel-item active bg-danger">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1540577293734-ae7e6e944cfb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=86f6a97518aa78f763acbfbe72274b21&auto=format&fit=crop&w=2031&q=80" alt="First slide">
       </div>
       <div class="carousel-item">
-        <div class="carousel-item active">
-          <div class="d-block w-100">
-            <div class="fill d-flex justify-content-center align-items-center">
-                <img src="https://images.unsplash.com/photo-1540577293734-ae7e6e944cfb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=86f6a97518aa78f763acbfbe72274b21&auto=format&fit=crop&w=2031&q=80" alt="First slide">
-            </div>
-          </div>
-        </div>
+        <img class="d-block w-100" src="..." alt="Second slide">
       </div>
       <div class="carousel-item">
-        <div class="carousel-item active">
-          <div class="d-block w-100">
-            <div class="fill d-flex justify-content-center align-items-center">
-                <img src="https://images.unsplash.com/photo-1540574435530-6f8df0eaf3a3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f61202b562b90decd2319ab648db246&auto=format&fit=crop&w=634&q=80" alt="First slide">
-            </div>
-          </div>
-        </div>
+        <img class="d-block w-100" src="..." alt="Third slide">
       </div>
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
