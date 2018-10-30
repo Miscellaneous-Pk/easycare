@@ -18,6 +18,10 @@ app.get('/',(req,res) => {
   res.render('index.hbs');
 })
 
+app.get('/dumy',(req,res) => {
+  res.render('dumy.hbs');
+})
+
 app.listen(port, () => {
   console.log(`listening on port ${port}...`);
 })
