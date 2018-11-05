@@ -15,7 +15,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine','hbs');
 
 app.get('/',(req,res) => {
-  res.render('index.hbs');
+  res.render('dumy2/index.hbs');
 })
 
 app.get('/dumy',(req,res) => {
