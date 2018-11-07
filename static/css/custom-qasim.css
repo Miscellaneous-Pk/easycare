@@ -32,3 +32,28 @@
 .d-flex {
   display: flex-inline;
 }
+
+#contact input[type="button"] {
+  background: #e44c65;
+  border:none;
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#contact input[type="button"]:hover {
+  background: #469349;
+  color: #ffffff;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-danger {
+  color: #e44c65 !important;
+}

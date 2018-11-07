@@ -8,7 +8,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
-	<title>Easyheal</title>
+	<title>Home</title>
 <!--
 Snapshot Template
 http://www.templatemo.com/tm-493-snapshot
@@ -34,6 +34,7 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 
 	<!-- Google web font  -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="assets/favicon.ico" />
 
 </head>
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
@@ -246,8 +247,8 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 
 			 </div>
 
-			 <div class="col-sm-12 text-left bottom-notification wow fadeInUp text-center" data-wow-delay="0.4s">
-				 <p> - These prices can change without any prior notifcation.<br>
+			 <div class="text-center col-sm-12 text-left bottom-notification wow fadeInUp" data-wow-delay="0.4s">
+				 <p> - Prices can change without any prior notifcation.<br>
 					 - Payment can be recieved through online transfer / paypal both in UK and Pakistan.<br>
 				 </p>
 	 		</div>
@@ -282,11 +283,13 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
             <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
           </div>
           <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-            <input type="submit" class="form-control" value="SEND MESSAGE">
+            <input id="submitEmail" type="button" class="form-control" value="SEND MESSAGE">
           </div>
         </form>
 
       </div>
+
+			<p id="error" class="d-none text-danger">Please fill all fields with valid information.</p>
 
     </div>
   </div>
@@ -323,6 +326,10 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- Javascript  -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/vegas.min.js"></script>
@@ -332,6 +339,29 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 <script src="js/smoothscroll.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+
+
+<script type="text/javascript">
+	$('#submitEmail').on('click', (event) => {
+		let name = $('#name').val();
+		let email = $('#email').val();
+		let message = $('#message').val();
+		if (name.length < 3 || email.length < 3 || message.length < 3) {
+			console.log("incomplete fields");
+			return $('#error').toggleClass('d-none d-block');
+		}
+
+		var data = {name,email,message};
+		data = JSON.stringify(data);
+		$.post(`/sendmail/${data}`)
+		.done((msg) => {
+			console.log(msg);
+		})
+		.fail((status,error,code) => {
+			console.log(status,error,code);
+		})
+	})
+</script>
 
 </body>
 </html>

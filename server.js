@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 const _ = require('lodash');
+const {sendEmail} = require('./server/sendmail');
 
 // const {mongoose} = require('./db/mongoose');
 
@@ -16,6 +17,13 @@ app.set('view engine','hbs');
 
 app.get('/',(req,res) => {
   res.render('dumy2/index.hbs');
+})
+
+app.post('/sendmail/:data',(req,res) => {
+  var body = JSON.parse(req.params.data);
+  console.log(body,'------=====+++++===-------');
+  sendEmail('qasimali24@gmail.com',body.message,'Easyheal - new message')
+  res.status(200).send();
 })
 
 app.get('/eft',(req,res) => {
