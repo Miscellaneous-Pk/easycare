@@ -1,0 +1,9 @@
+
+.border {
+  border: 1px solid green;
+  border-radius: 6px 6px;
+}
+
+.bottom-notification {
+  padding-top: 52px;
+}
