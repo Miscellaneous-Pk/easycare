@@ -1,8 +1,0 @@
-{
-  "test": {
-    "PORT": 3000,"EMAIL_ID":"miscellaneous.pk.0@gmail.com","EMAIL_PASSWORD":"1234!qasim"
-  },
-  "development": {
-    "PORT": 3000,"EMAIL_ID":"miscellaneous.pk.0@gmail.com","EMAIL_PASSWORD":"1234!qasim"
-  }
-}
