@@ -7,3 +7,28 @@
 .bottom-notification {
   padding-top: 52px;
 }
+
+#upper-section {
+  background-color: #2F4352;
+  height: 23rem;
+  margin-top: 2rem;
+}
+
+.border-bottom {
+  border-bottom: 2px solid #E44D65;
+  padding-bottom: 10px;
+}
+
+#content-section {
+  background-color: #FFFFFF;
+  padding-top: 62px;
+  padding-bottom: 62px;
+}
+
+.padding-top {
+  padding-top: 52px
+}
+
+.d-flex {
+  display: flex-inline;
+}
