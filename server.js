@@ -29,7 +29,7 @@ app.all("/*", (req, res, next) => {
 app.post('/sendmail',(req,res) => {
   var body = req.body;
   console.log(body);
-  sendEmail('qasimali24@gmail.com',body,`Easyheal - Message from ${body.name}`)
+  sendEmail('abidabano1024@gmail.com',body,`Easyheal - Message from ${body.name}`)
   .then((reply) => {
     console.log('mail sent', reply);
     res.status(200).send('mail sent');
