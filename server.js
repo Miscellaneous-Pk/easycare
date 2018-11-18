@@ -26,11 +26,19 @@ app.all("/*", (req, res, next) => {
   }
 });
 
-app.post('/sendmail/:data',(req,res) => {
-  var body = JSON.parse(req.params.data);
-  console.log(body,'------=====+++++===-------');
-  sendEmail('qasimali24@gmail.com',body.message,`Easyheal - new message from ${body.name}`)
-  res.status(200).send();
+app.post('/sendmail',(req,res) => {
+  var body = req.body;
+  console.log(body);
+  sendEmail('qasimali24@gmail.com',body,`Easyheal - Message from ${body.name}`)
+  .then((reply) => {
+    console.log('mail sent', reply);
+    res.status(200).send('mail sent');
+  })
+  .catch((e) => {
+    console.log(e);
+    res.status(404).send(e);
+  })
+
 })
 
 

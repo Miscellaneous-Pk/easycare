@@ -21,8 +21,16 @@ var sendEmail = (toEmail,text,subject) => {
             from: '"Request Raised" <letshelp@email.com>', // sender address
             to: toEmail, // list of receivers
             subject: subject, // Subject line
-            text: 'a notification is here', // plain text body
-            html: text // html body
+            text: '', // plain text body
+            html: `
+            <p><b>Name :</b>  ${text.name} </p>
+            <p><b>Email :</b>  ${text.email} </p>
+            <p><b>Message :</b>  ${text.message} </p>
+            <br>
+            <small><br>
+              * Don't reply to this email, it is a computer generated message.
+            </small>
+            ` // html body
         };
 
         // send mail with defined transport object
@@ -34,7 +42,8 @@ var sendEmail = (toEmail,text,subject) => {
             console.log('Message sent: %s', info.messageId);
             // Preview only available when sending through an Ethereal account
             console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-            resolve(text);
+
+            resolve(text.name);
             // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
             // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
         });
